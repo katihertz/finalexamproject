@@ -84,7 +84,7 @@ router.post('/', async (req, res) => {
         result = await collection.updateOne(filter, update);
 
     } catch {
-        console.error(e)
+        console.error(e);
     } finally {
         await mongoClient.close();
     }
@@ -99,24 +99,26 @@ router.post('/', async (req, res) => {
 });
 
 router.get("/display",async (req,res)=>{
+    let result;
+    let user = req.session.user;
     try {
         await mongoClient.connect();
         const database = mongoClient.db(databaseName);
         const collection = database.collection(collectionName);
 
-        const user = req.session.user;
         let filter = {user: user};
-
-        let result = await collection.findOne(filter);
+        result = await collection.findOne(filter);
         console.log(result);
 
-
     } catch {
-        console.error(e)
+        console.error(e);
     } finally {
         await mongoClient.close();
     }
-    let table = getTable(result.wishes);
+    if (!result || !result.wishes) {
+        return res.render('display', { user: user, wishTable: "<p>No data available</p>" });
+    }
+    const table = getTable(result.wishes);
     res.render('display', {user: user, wishTable: table});
 });
 
