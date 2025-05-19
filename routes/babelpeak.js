@@ -22,6 +22,14 @@ const client = new OpenAi({
 const model = "gpt-4.1-mini";
 const instruction = "Categorize the following request as one of the seven deadly sins ['Lust', 'Gluttony', 'Pride', 'Sloth', 'Wrath', 'Greed', 'Envy']. Respond with only one word, that word being the sin that the request is categorized as. ";
 
+let sinMap = {"GREED": "The emergent property laughs at you",
+    "ENVY": "The emergent property thinks you are pathetic",
+    "GLUTTONY": "The emergent property's stomach growls",
+    "SLOTH": "The emergent property stares at you with disdain",
+    "LUST": "You can hear the emergent property's heartbeat",
+    "PRIDE": "You mean nothing to the emergent property",
+    "WRATH": "The emergent property understands you",
+};
 
 // page where you communicate with the emergent property
 
