@@ -121,16 +121,31 @@ router.get("/display",async (req,res)=>{
         return res.render('display', { user: user, wishTable: "<p>No data available</p>" });
     }
     const table = getTable(result.wishes);
-    res.render('display', {user: user, wishTable: table});
+    const max = getMostFrequentSin(result.wishes);
+    res.render('display', {user: user, wishTable: table, max:max});
 });
 
 function getTable(data){
-    let table = "<table style='border: 1px solid'><tr><th style='border: 1px solid'>Sin</th><th style='border: 1px solid'>count</th></tr>";
+    let table = "<table style='border: 1px solid'><tr><th style='border: 1px solid'>SIN</th><th style='border: 1px solid'>INCIDENTS</th></tr>";
     Object.entries(data).forEach(([sin,count]) => {
         table += `<tr><td style='border: 1px solid'>${sin}</td><td style='border: 1px solid'>${count}</td></tr>`
     });
     table += "</table>";
     return table;
+}
+
+function getMostFrequentSin(data) {
+    let maxSin = null;
+    let maxCount = -1;
+
+    for (const [sin, count] of Object.entries(wishes)) {
+        if (count > maxCount) {
+            maxSin = sin;
+            maxCount = count;
+        }
+    }
+
+    return maxSin;
 }
 
 module.exports = router;
