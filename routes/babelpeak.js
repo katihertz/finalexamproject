@@ -84,7 +84,7 @@ router.post('/', async (req, res) => {
 
         result = await collection.updateOne(filter, update);
 
-    } catch {
+    } catch (e){
         console.error(e);
     } finally {
         await mongoClient.close();
@@ -112,7 +112,7 @@ router.get("/display",async (req,res)=>{
         result = await collection.findOne(filter);
         console.log(result);
 
-    } catch {
+    } catch (e){
         console.error(e);
     } finally {
         await mongoClient.close();
@@ -138,7 +138,7 @@ function getMostFrequentSin(data) {
     let maxSin = null;
     let maxCount = -1;
 
-    for (const [sin, count] of Object.entries(wishes)) {
+    for (const [sin, count] of Object.entries(data)) {
         if (count > maxCount) {
             maxSin = sin;
             maxCount = count;
