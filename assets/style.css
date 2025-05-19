@@ -12,7 +12,7 @@ h1{
   font-family: "Jacquard 24", system-ui;
 }
 
-.tower:hover{
+#tower:hover{
   font-family: "Sixtyfour Convergence", sans-serif;
   font-size: 1rem;
 }
