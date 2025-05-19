@@ -1,14 +1,15 @@
 body{
-    background-color:black;
+    background-color:white;
 }
 
 p{
-    color: greenyellow;
-    font-family: "Coral Pixels", serif;
+    color: black;
+    font-family: "Jacquard 24", system-ui;
 }
 
-.coral-pixels-regular {
-  font-family: "Coral Pixels", serif;
+.jacquard-24-regular {
+  font-family: "Jacquard 24", system-ui;
   font-weight: 400;
   font-style: normal;
 }
+
