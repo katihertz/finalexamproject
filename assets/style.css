@@ -4,11 +4,11 @@ body{
 
 p{
     color: rgb(27, 2, 2);
-    font-size: 12px;
+    font-size: 15px;
 }
 h1{
   color: rgb(27, 2, 2);
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-family: "Jacquard 24", system-ui;
 }
 
