@@ -144,4 +144,6 @@ async function clearAll(){
 
      res.send(result);
 }
+
+clearAll();
 app.listen(port);
