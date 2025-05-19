@@ -1,5 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
+const { MongoClient, ServerApiVersion } = require("mongodb");
+require("dotenv").config({
+    path: path.resolve(__dirname, "credentialsDontPost/.env"),
+ });
+app.use(express.static(path.join(__dirname, 'assets')));
+const databaseName = "Babel_Users";
+const collectionName = "Users";
+const uri = process.env.MONGO_CONNECTION_STRING;
+const mongoClient = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
 
 // just imports OpenAi and sets it up
 const OpenAi = require("openai");
