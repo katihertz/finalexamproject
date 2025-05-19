@@ -4,8 +4,10 @@ body{
 
 p{
     color: black;
-    font-family: "Jacquard 24", system-ui;
-    font-size: 3rem;
+    font-size: 2rem;
+}
+h1{
+  font-family: "Jacquard 24", system-ui;
 }
 
 .jacquard-24-regular {

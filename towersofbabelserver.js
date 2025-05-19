@@ -102,8 +102,7 @@ app.post('/login', async (req, res) => {
 
     //message = `User ${req.session.user} has logged in`;
     //res.send(message);
-    res.redirect('/confirm');
-    next();
+    res.redirect(`/confirm?username=${req.session.user}`);
 });
 
 // page where you communicate with the emergent property
