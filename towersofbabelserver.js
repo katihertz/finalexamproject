@@ -9,6 +9,7 @@ const { MongoClient, ServerApiVersion } = require("mongodb");
 require("dotenv").config({
     path: path.resolve(__dirname, "credentialsDontPost/.env"),
  });
+app.use(express.static(path.join(__dirname, 'assets')));
 const databaseName = "Babel_Users";
 const collectionName = "Users";
 const uri = process.env.MONGO_CONNECTION_STRING;
