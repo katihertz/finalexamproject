@@ -142,6 +142,5 @@ async function clearAll(){
         await mongoClient.close();
      }
 }
-
-clearAll();
+//clearAll();
 app.listen(port);
