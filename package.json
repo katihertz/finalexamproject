@@ -1,9 +1,9 @@
 {
   "name": "final-project",
   "version": "1.0.0",
-  "main": "test-chat.js",
+  "main": "towersofbabelserver.js",
   "scripts": {
-    "start": "node test-chat.js",
+    "start": "node towersofbabelserver.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
