@@ -123,9 +123,9 @@ router.get("/display",async (req,res)=>{
 });
 
 function getTable(data){
-    let table = "<table><tr><th>Sin</th><th>count</th></tr>";
+    let table = "<table style='border: 1px solid'><tr><th style='border: 1px solid'>Sin</th><th style='border: 1px solid'>count</th></tr>";
     Object.entries(data).forEach(([sin,count]) => {
-        table += `<tr><td>${sin}</td><td>${count}</td></tr>`
+        table += `<tr><td style='border: 1px solid'>${sin}</td><td style='border: 1px solid'>${count}</td></tr>`
     });
     table += "</table>";
     return table;
