@@ -1,35 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const app = express();
-const bodyParser = require("body-parser");
-const path = require("path");
-const port = process.env.PORT || 4000;
-const cookieParser = require("cookie-parser");
-const session = require("express-session");
-const { MongoClient, ServerApiVersion } = require("mongodb");
-require("dotenv").config({
-    path: path.resolve(__dirname, "credentialsDontPost/.env"),
- });
-app.use(express.static(path.join(__dirname, 'assets')));
-const databaseName = "Babel_Users";
-const collectionName = "Users";
-const uri = process.env.MONGO_CONNECTION_STRING;
-const mongoClient = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
-
-// middleware
-app.set("view engine", "ejs");
-app.set("views", path.resolve(__dirname, "templates"));
-app.use(bodyParser.urlencoded({extended:false}));
-app.use(cookieParser());
-
-// just imports OpenAi and sets it up
-const OpenAi = require("openai");
-const client = new OpenAi({
-    apiKey: process.env.OPENAI_API_KEY
-});
-const model = "gpt-4.1-mini";
-const instruction = "Categorize the following request as one of the seven deadly sins ['Lust', 'Gluttony', 'Pride', 'Sloth', 'Wrath', 'Greed', 'Envy']. Respond with only one word, that word being the sin that the request is categorized as. ";
-
 
 // page where you communicate with the emergent property
 
