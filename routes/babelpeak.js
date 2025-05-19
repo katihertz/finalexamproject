@@ -96,6 +96,37 @@ router.post('/', async (req, res) => {
     }
 
     res.render('babelpeak', variables);
-})
+});
+
+router.get("/display",async (req,res)=>{
+    try {
+        await mongoClient.connect();
+        const database = mongoClient.db(databaseName);
+        const collection = database.collection(collectionName);
+
+        const user = req.session.user;
+        let filter = {user: user};
+
+        let result = await collection.findOne(filter);
+        console.log(result);
+
+
+    } catch {
+        console.error(e)
+    } finally {
+        await mongoClient.close();
+    }
+    let table = getTable(result.wishes);
+    res.render('display', {user: user, wishTable: table});
+});
+
+function getTable(data){
+    let table = "<table><tr><th>Sin</th><th>count</th></tr>";
+    Object.entries(data).forEach(([sin,count]) => {
+        table += `<tr><td>${sin},</td><td>${count}</td></tr>`
+    });
+    table += "</table>";
+    return table;
+}
 
 module.exports = router;
