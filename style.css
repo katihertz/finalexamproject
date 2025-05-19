@@ -1,0 +1,14 @@
+body{
+    background-color:black;
+}
+
+p{
+    color: greenyellow;
+    font-family: "Coral Pixels", serif;
+}
+
+.coral-pixels-regular {
+  font-family: "Coral Pixels", serif;
+  font-weight: 400;
+  font-style: normal;
+}
