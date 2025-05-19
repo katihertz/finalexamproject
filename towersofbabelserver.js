@@ -96,7 +96,7 @@ app.post('/login', async (req, res) => {
             let result = await collection.insertOne(newUser);
             console.log(result.name)
         }
-    } catch {
+    } catch (e){
         console.error(e);
     } finally {
         await mongoClient.close();
@@ -126,4 +126,22 @@ app.get('/debug', async (req, res) => {
 
      res.send(result);
 })
+
+async function clearAll(){
+    try {
+        await mongoClient.connect();
+        const database = mongoClient.db(databaseName);
+        const collection = database.collection(collectionName);
+  
+        const filter = {};
+        result = await collection.deleteMany(filter);
+        console.log(`entries deleted ${result.deletedCount}`);
+     } catch (e) {
+        console.error(e);
+     } finally {
+        await mongoClient.close();
+     }
+
+     res.send(result);
+}
 app.listen(port);
