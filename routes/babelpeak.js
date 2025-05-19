@@ -16,6 +16,12 @@ const collectionName = "Users";
 const uri = process.env.MONGO_CONNECTION_STRING;
 const mongoClient = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
 
+// middleware
+app.set("view engine", "ejs");
+app.set("views", path.resolve(__dirname, "templates"));
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(cookieParser());
+
 // just imports OpenAi and sets it up
 const OpenAi = require("openai");
 const client = new OpenAi({

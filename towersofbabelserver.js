@@ -29,7 +29,7 @@ app.set("views", path.resolve(__dirname, "templates"));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
 
-const confirm = require("./routes/babelpeak");
+const babelpeak = require("./routes/babelpeak");
 app.use("/babelpeak", babelpeak);
 
 // Maybe look at secret again later
