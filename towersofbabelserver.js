@@ -29,6 +29,9 @@ app.set("views", path.resolve(__dirname, "templates"));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
 
+const confirm = require("./routes/confirm");
+app.use("/confirm",confirm);
+
 // Maybe look at secret again later
 app.use(
     session({
@@ -97,8 +100,10 @@ app.post('/login', async (req, res) => {
         await mongoClient.close();
     }
 
-    message = `User ${req.session.user} has logged in`;
-    res.send(message);
+    //message = `User ${req.session.user} has logged in`;
+    //res.send(message);
+    res.redirect('/confirm');
+    next();
 });
 
 // page where you communicate with the emergent property
