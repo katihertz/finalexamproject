@@ -39,6 +39,7 @@ router.get('/', (req, res) => {
         voice: "",
         testData: "",
         user: req.session.user,
+        innerHTML:""
     };
 
     res.render('babelpeak', variables);
@@ -93,6 +94,7 @@ router.post('/', async (req, res) => {
         voice: sin in sinMap ? sinMap[sin] : "It stares at you",
         testData: "",
         user: req.session.user,
+        innerHTML: '<a href="/babelpeak/display">see your wishes</a>'
     }
 
     res.render('babelpeak', variables);

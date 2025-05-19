@@ -6,7 +6,8 @@
 </head>
 
 <body>
-    <p><%= user %>, it stares at you...</p> <br>
+    <p><%= user %>, it stares at you...<br>
+    It seems to be waiting for you to ask it something.</p>
     <p>Make a wish?</p>
 
     <form action="/babelpeak" method="post">
@@ -17,7 +18,7 @@
     <%= voice %>
     <br>
     <%= testData %>
-    <a href="/babelpeak/display">see your wishes</a>
+    <%- innerHTML %>
 </body>
 
 </html>
