@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
 const path = require("path");
+const port = process.env.PORT || 4000;
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const { MongoClient, ServerApiVersion } = require("mongodb");
@@ -185,4 +186,4 @@ app.get('/debug', async (req, res) => {
 
      res.send(result);
 })
-app.listen(4000);
+app.listen(port);
