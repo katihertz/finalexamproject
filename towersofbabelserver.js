@@ -141,8 +141,6 @@ async function clearAll(){
      } finally {
         await mongoClient.close();
      }
-
-     res.send(result);
 }
 
 clearAll();

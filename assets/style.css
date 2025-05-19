@@ -1,12 +1,13 @@
 body{
-    background-color:white;
+    background-color:rgb(76, 74, 74);
 }
 
 p{
-    color: black;
+    color: whitesmoke;
     font-size: 2rem;
 }
 h1{
+  color: whitesmoke;
   font-family: "Jacquard 24", system-ui;
 }
 
