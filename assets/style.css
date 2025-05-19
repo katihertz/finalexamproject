@@ -5,6 +5,7 @@ body{
 p{
     color: black;
     font-family: "Jacquard 24", system-ui;
+    font-size:2rem;
 }
 
 .jacquard-24-regular {
