@@ -29,9 +29,6 @@ app.set("views", path.resolve(__dirname, "templates"));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
 
-const babelpeak = require("./routes/babelpeak");
-app.use("/babelpeak", babelpeak);
-
 // Maybe look at secret again later
 app.use(
     session({
@@ -49,6 +46,11 @@ let sinMap = {"GREED": "The emergent property laughs at you",
     "PRIDE": "You mean nothing to the emergent property",
     "WRATH": "The emergent property understands you",
 };
+
+const babelpeak = require("./routes/babelpeak");
+app.use("/babelpeak", babelpeak);
+
+
 app.get('/', (req, res) => {
     res.render('disclaimer');
 });
