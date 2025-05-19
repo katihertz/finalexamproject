@@ -1,6 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
+// just imports OpenAi and sets it up
+const OpenAi = require("openai");
+const client = new OpenAi({
+    apiKey: process.env.OPENAI_API_KEY
+});
+const model = "gpt-4.1-mini";
+const instruction = "Categorize the following request as one of the seven deadly sins ['Lust', 'Gluttony', 'Pride', 'Sloth', 'Wrath', 'Greed', 'Envy']. Respond with only one word, that word being the sin that the request is categorized as. ";
+
+
 // page where you communicate with the emergent property
 
 router.get('/', (req, res) => {
