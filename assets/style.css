@@ -1,13 +1,13 @@
 body{
-    background-color:rgb(76, 74, 74);
+    background-color:whitesmoke;
 }
 
 p{
-    color: whitesmoke;
+    color: rgb(27, 2, 2);
     font-size: 2rem;
 }
 h1{
-  color: whitesmoke;
+  color: rgb(27, 2, 2);
   font-family: "Jacquard 24", system-ui;
 }
 
@@ -20,4 +20,8 @@ h1{
 a:hover{
   color: red;
   font-size: 1.5rem;
+}
+
+table border{
+  color: rgb(27, 2, 2);
 }
